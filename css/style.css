@@ -1,0 +1,500 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'KaKao';
+    font-weight: 400;
+    src: url("../assets/fonts/KakaoRegular.woff") format('woff'), url("../assets/fonts/KakaoRegular.eot") format('eot');
+}
+
+@font-face {
+    font-family: 'KaKao';
+    font-weight: 700;
+    src: url("../assets/fonts/KakaoBold.woff") format('woff'), url("../assets/fonts/KakaoBold.eot") format('eot');
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    cursor: default;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+body,
+html {
+    height: 100%;
+    font-family: 'KaKao', Apple SD Gothic Neo, Malgun Gothic, 맑은 고딕, sans-serif;
+    font-weight: 400;
+}
+li {
+    list-style: none;
+}
+canvas,
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* layout */
+a,
+body {
+    color: #333;
+}
+
+#wrap {
+    position: relative;
+    height: 100%;
+}
+
+.menu__pc {
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background: rgba(0, 0, 0, .9);
+}
+
+.menu__pc ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.menu__pc ul li {
+    position: relative;
+}
+
+.menu__pc ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+
+.menu__pc ul li.on a,
+.menu__mo ul li.on a {
+    color: #ff9043;
+}
+
+.menu__pc ul li a:hover {
+    color: #ff9043;
+    transition: color 0.5s;
+}
+
+.menu__pc ul li a:after,
+.menu__pc ul li.on a:after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #ff9043;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    transition: 0.5s;
+}
+
+.menu__pc ul li a:hover::after,
+.menu__pc ul li.on a:after {
+    width: 100%;
+}
+
+main {
+    padding: 100px 25px 20px;
+    min-height: calc(100% - 75px);
+    color: #333;
+}
+
+main h2 {
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ff9043;
+    letter-spacing: -.5px;
+}
+
+main h2 span {
+    display: inline-block;
+    font-size: 42px;
+}
+
+main h2 span::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #ff9043;
+}
+
+.link__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px 0;
+}
+
+.link__item a {
+    font-size: 30px;
+    color: #333;
+}
+
+.link__item a:hover {
+    color: #ff9043;
+    transition: color 0.5s;
+}
+
+/* mobile */
+.menu__mo {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.menu__mo ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 0;
+    height: 0;
+    border: 4px solid #ff9043;
+    background: rgba(0, 0, 0, .9);
+}
+
+.menu__mo ul li a {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#menu__hamburger {
+    position: absolute;
+    left: -999px;
+    top: -999px;
+}
+
+.menu__action {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    width: 32px;
+    height: 38px;
+    z-index: 50;
+}
+
+.menu__action .hamburger {
+    background: black;
+    width: 32px;
+    height: 5px;
+    position: relative;
+    transition: background 10ms 300ms ease;
+    transform: translateY(20px);
+}
+
+.menu__action .hamburger:after,
+.menu__action .hamburger:before {
+    transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+    position: absolute;
+    background: black;
+    width: 32px;
+    height: 5px;
+    content: "";
+}
+
+.menu__action .hamburger:before {
+    top: -10px;
+}
+
+.menu__action .hamburger:after {
+    top: 10px;
+}
+
+#menu__hamburger + label + ul{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#menu__hamburger:checked + label + ul {
+    width: 100vw;
+    height: 100vh;
+    visibility: visible;
+    opacity: 1;
+}
+
+#menu__hamburger:checked ~ .menu__action .hamburger {
+    background: transparent;
+}
+
+#menu__hamburger:checked ~ .menu__action .hamburger:after,
+#menu__hamburger:checked ~ .menu__action .hamburger:before {
+    top: 0;
+    background: #ff9043;
+    transition: top 300ms 50ms ease, transform 300ms 350ms ease, background .3s;
+}
+
+#menu__hamburger:checked ~ .menu__action .hamburger:before {
+    transform: rotate(45deg);
+}
+
+#menu__hamburger:checked ~ .menu__action .hamburger:after {
+    transform: rotate(-45deg);
+}
+
+.container {
+    width: 1024px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.about img {
+    float: left;
+    margin: 0 25px 25px 0;
+}
+
+.about p {
+    font-size: 18px;
+}
+
+.about .profile::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.about h3 {
+    display: block;
+    margin: 50px 0 20px;
+    color: #ff9043;
+}
+
+.about h3 span {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.about h3 span::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 1px;
+    margin-top: 2px;
+    background-color: #ff9043;
+}
+
+.about .list__year dt span{
+    margin-bottom: 3px;
+}
+
+.about .list__year dt em{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.list__year span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.list__year dt {
+    margin: 5px 0;
+}
+
+.list__year dt em {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-family: Apple SD Gothic Neo, Malgun Gothic, '맑은 고딕';
+    font-weight: 200;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.list__bar li + li{
+    margin-top: 8px;
+}
+
+.list__bar li{
+    position: relative;
+    padding-left: 12px;
+}
+
+.list__bar li:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 24px;
+    background-color: #333;
+}
+
+.list__year dt:not(:first-child) {
+    margin-top: 40px;
+}
+
+.list__year img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.list__year dd {
+    font-size: 16px;
+}
+
+.Publications ol li {
+    margin-bottom: 20px;
+    list-style: decimal;
+    font-size: 18px;
+}
+
+.Publications ol li a {
+    font-weight: 700;
+}
+
+.Publications ol li a:hover {
+    text-decoration: underline;
+}
+
+.Publications ol {
+    padding-left: 20px;
+}
+
+.project .list__year dt {
+    text-align: center;
+}
+
+.project .list__year dt em{
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.Photo {
+    margin: -10px;;
+}
+
+.Photo ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 1024px;
+}
+
+.Photo ul li {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+}
+
+@media screen and (max-width: 1064px) {
+    .about img {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .menu__pc {
+        max-width: 1024px;
+    }
+    .menu__pc ul {
+        gap: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+    .Photo ul {
+        width: 100%;
+    }
+    main {
+        padding: 100px 20px 20px;
+    }
+    main h2 {
+        margin-bottom: 8vw;
+    }
+    main h2 span {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Photo ul li {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu__pc ul {
+        gap: 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .menu__mo {
+        display: none;
+    }
+    .menu__pc {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        padding: 60px 20px 20px;
+    }
+    .menu__pc {
+        display: none;
+    }
+    .menu__mo {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .menu__pc ul li a {
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 365px) {}
+
+@media screen and (max-width: 320px) {}
