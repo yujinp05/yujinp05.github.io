@@ -316,6 +316,26 @@ main h2 span::after {
     background-color: #ff9043;
 }
 
+.about h4 {
+    display: block;
+    margin: 50px 0 20px;
+    color: #ff9043;
+}
+
+.about h4 span {
+    display: inline-block;
+    font-size: 25px;
+}
+
+.about h4 span::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 1px;
+    margin-top: 2px;
+    background-color: #ff9043;
+}
+
 .about .list__year dt span{
     margin-bottom: 3px;
 }
