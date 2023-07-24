@@ -399,21 +399,21 @@ main h2 span::after {
     text-align: center;
 }
 
-.Research ol li {
+.Research ul li {
     margin-bottom: 20px;
     list-style: decimal;
     font-size: 18px;
 }
 
-.Research ol li a {
+.Research ul li a {
     font-weight: 700;
 }
 
-.Research ol li a:hover {
+.Research ul li a:hover {
     text-decoration: underline;
 }
 
-.Research ol {
+.Research ul {
     padding-left: 20px;
 }
 
