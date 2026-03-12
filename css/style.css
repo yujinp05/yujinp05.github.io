@@ -109,7 +109,7 @@ body {
 }
 
 .menu__pc ul li a:hover,
-.profile a{
+.profile a:hover{
     color: #ff9043;
     transition: color 0.5s;
 }
