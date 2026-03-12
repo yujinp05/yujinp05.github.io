@@ -175,6 +175,49 @@ main h2 span::after {
     transition: color 0.5s;
 }
 
+/* Professor Page */
+
+.profile{
+display:flex;
+gap:40px;
+margin-top:30px;
+align-items:flex-start;
+}
+
+.profile__image img{
+border-radius:6px;
+}
+
+.profile__content{
+max-width:700px;
+}
+
+.name{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.title{
+font-size:18px;
+color:#444;
+margin-bottom:20px;
+}
+
+.info{
+list-style:none;
+padding:0;
+margin-bottom:20px;
+}
+
+.info li{
+margin-bottom:6px;
+}
+
+.bio p{
+margin-bottom:14px;
+line-height:1.7;
+}
+
 /* mobile */
 .menu__mo {
     position: fixed;
