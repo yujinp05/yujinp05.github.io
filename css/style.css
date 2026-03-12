@@ -424,6 +424,7 @@ main section + section{
 
 .profile ~ h3{
     margin-top: 30px;
+    font-size: 22px;
 }
 .profile ~ .list__bar{
     margin-top: 8px;
