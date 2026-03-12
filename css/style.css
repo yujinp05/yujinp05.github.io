@@ -213,6 +213,12 @@ margin-bottom:20px;
 margin-bottom:6px;
 }
 
+.bio{
+    margin-top: 50px;
+    padding: 50px 0 30px;
+    border-top: 1px solid rgba(0,0,0,0.150000006);
+}
+
 .bio p{
 margin-bottom:14px;
 line-height:1.7;
