@@ -180,10 +180,9 @@ main h2 span::after {
 /* Professor Page */
 
 .profile{
-display:flex;
-gap:40px;
-margin-top:30px;
-align-items:flex-start;
+    display:flex;
+    margin-top:30px;
+    align-items:flex-start;
 }
 
 .profile__image img{
@@ -191,7 +190,7 @@ align-items:flex-start;
 }
 
 .profile__content{
-    width: 100%;
+    padding: 0 40px;
 }
 
 .name{
