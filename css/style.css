@@ -427,11 +427,11 @@ main section + section{
     font-size: 22px;
 }
 .profile ~ .list__bar{
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .list__bar li + li{
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .list__bar li{
