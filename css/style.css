@@ -419,6 +419,14 @@ main section + section{
     line-height: 1.2;
 }
 
+
+.profile ~ h3{
+    margin-top: 30px;
+}
+.profile ~ .list__bar{
+    margin-top: 8px;
+}
+
 .list__bar li + li{
     margin-top: 8px;
 }
