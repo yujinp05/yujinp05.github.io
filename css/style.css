@@ -186,11 +186,11 @@ align-items:flex-start;
 }
 
 .profile__image img{
-border-radius:6px;
+    border-radius:6px;
 }
 
 .profile__content{
-max-width:700px;
+    width: 100%;
 }
 
 .name{
@@ -559,6 +559,8 @@ main section + section{
     }
     main h2 span {
         font-size: 32px;
+    }
+    .profile {
     }
 }
 
