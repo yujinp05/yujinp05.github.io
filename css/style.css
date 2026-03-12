@@ -560,8 +560,6 @@ main section + section{
     main h2 span {
         font-size: 32px;
     }
-    .profile {
-    }
 }
 
 @media screen and (max-width: 800px) {
@@ -584,7 +582,6 @@ main section + section{
     .menu__pc {
         display: block;
     }
-}
 
 @media screen and (max-width: 500px) {
     main {
@@ -595,6 +592,12 @@ main section + section{
     }
     .menu__mo {
         display: block;
+    }
+    .profile {
+        display: block;
+    }
+    .profile__image img {
+        marign: 0 auto 20px auto;
     }
 }
 
