@@ -595,9 +595,15 @@ main section + section{
     .menu__mo {
         display: block;
     }
+    
     .profile {
         display: block;
     }
+    
+    .profile__content{
+        padding: 0;
+    }
+
     .profile__image img {
         margin: 0 auto 20px auto;
     }
