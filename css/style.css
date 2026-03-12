@@ -599,7 +599,7 @@ main section + section{
         display: block;
     }
     .profile__image img {
-        marign: 0 auto 20px auto;
+        margin: 0 auto 20px auto;
     }
 }
 
